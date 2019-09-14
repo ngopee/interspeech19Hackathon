@@ -1,385 +1,437 @@
 {
-  "interactionModel": {
-    "languageModel": {
-      "invocationName": "decision tree",
-      "intents": [
-        {
-          "name": "AMAZON.CancelIntent",
-          "samples": []
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "pet match",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "PetMatchIntent",
+                    "slots": [
+                        {
+                            "name": "pet",
+                            "type": "AMAZON.Animal"
+                        },
+                        {
+                            "name": "size",
+                            "type": "sizeType",
+                            "samples": [
+                                "{I_Want} {article} {size} {pet}",
+                                "{I_Want} {size}",
+                                "the {size}",
+                                "Something i can {size}",
+                                "{size} size",
+                                "{I_Want} {article} {size} {pet} that {energy}",
+                                "{I_Want} {article} {size} {temperament} {pet}",
+                                "{I_Want} {article} {size} {temperament} to {energy}",
+                                " {temperament} {pet}",
+                                "{energy} energy",
+                                "{size}"
+                            ]
+                        },
+                        {
+                            "name": "temperament",
+                            "type": "temperamentType",
+                            "samples": [
+                                "{temperament} {pet}"
+                            ]
+                        },
+                        {
+                            "name": "I_Want",
+                            "type": "IWantType"
+                        },
+                        {
+                            "name": "energy",
+                            "type": "energyType",
+                            "samples": [
+                                "{energy} energy",
+                                "{I_Want} to {energy}"
+                            ]
+                        },
+                        {
+                            "name": "article",
+                            "type": "articleType"
+                        },
+                        {
+                            "name": "at_the",
+                            "type": "atTheType"
+                        }
+                    ],
+                    "samples": [
+                        "{I_Want} {article} {pet}",
+                        "{I_Want} {article} {size} {temperament} dog",
+                        "find a pet",
+                        "match me",
+                        "{size} {pet}",
+                        "for a {pet}",
+                        "{I_Want} {article} {pet} that is {temperament} and {energy}",
+                        "{energy} {pet}",
+                        "{I_Want} {article} {energy} {pet}",
+                        "{I_Want} {article} {temperament} dog that is {energy} energy"
+                    ]
+                },
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                }
+            ],
+            "types": [
+                {
+                    "name": "articleType",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "a"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "an"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "the"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "atTheType",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "at the"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "on the"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "around the"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "in the"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "energyType",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "low",
+                                "synonyms": [
+                                    "low energy",
+                                    "to cuddle with",
+                                    "to watch netflix with",
+                                    "lazy"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "medium",
+                                "synonyms": [
+                                    "medium energy",
+                                    "for my apartment",
+                                    "fun to play with",
+                                    "tug of war",
+                                    "plays tug of war"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "high",
+                                "synonyms": [
+                                    "that I can run with",
+                                    "play frisbee",
+                                    "run",
+                                    "hike",
+                                    "go hiking",
+                                    "play fetch",
+                                    "energetic",
+                                    "high energy"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "IWantType",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "my favorite is"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "I prefer"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "let's find"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "we like"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "we would like"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "how about"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "I want"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "I like"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "sizeType",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "large",
+                                "synonyms": [
+                                    "large size",
+                                    "huge",
+                                    "truck",
+                                    "gigantic",
+                                    "eat me out of house",
+                                    "scary big",
+                                    "ginormous",
+                                    "ride",
+                                    "waist height"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "medium",
+                                "synonyms": [
+                                    "medium size",
+                                    "bigger than a cat",
+                                    "on the bed",
+                                    "up to my knees",
+                                    "average"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "small",
+                                "synonyms": [
+                                    "small size",
+                                    "little",
+                                    "take on an airplane"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "tiny",
+                                "synonyms": [
+                                    "tiny size",
+                                    "cheap to feed",
+                                    "teacup",
+                                    "pocket",
+                                    "yippy",
+                                    "carry in my purse",
+                                    "put in my pocket",
+                                    "itty bitty"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "temperamentType",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "watch",
+                                "synonyms": [
+                                    "adult",
+                                    "barks at people"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "guard",
+                                "synonyms": [
+                                    "to protect me",
+                                    "protective"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "family",
+                                "synonyms": [
+                                    "hang out",
+                                    "hang out with kids",
+                                    "is kid friendly",
+                                    "good with kids",
+                                    "family friends",
+                                    "gentle with kids"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "AMAZON.Animal",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "mythical_creatures",
+                                "synonyms": [
+                                    "unicorn",
+                                    "chimera",
+                                    "dragon"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
         },
-        {
-          "name": "AMAZON.HelpIntent",
-          "samples": []
+        "dialog": {
+            "intents": [
+                {
+                    "name": "PetMatchIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "pet",
+                            "type": "AMAZON.Animal",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "size",
+                            "type": "sizeType",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Intent-PetMatchIntent.IntentSlot-size"
+                            }
+                        },
+                        {
+                            "name": "temperament",
+                            "type": "temperamentType",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Intent-PetMatchIntent.IntentSlot-temperament"
+                            }
+                        },
+                        {
+                            "name": "I_Want",
+                            "type": "IWantType",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "energy",
+                            "type": "energyType",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Intent-PetMatchIntent.IntentSlot-energy"
+                            }
+                        },
+                        {
+                            "name": "article",
+                            "type": "articleType",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "at_the",
+                            "type": "atTheType",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
+                }
+            ]
         },
-        {
-          "name": "AMAZON.StopIntent",
-          "samples": []
-        },
-        {
-         "name": "AMAZON.FallbackIntent",
-         "samples": []
-       },
-        {
-          "name": "CouchPotatoIntent",
-          "samples": [
-            "couch potato",
-            "lazy"
-          ]
-        },
-        {
-          "name": "RecommendationIntent",
-          "slots": [
+        "prompts": [
             {
-              "name": "salaryImportance",
-              "type": "salaryImportanceType",
-              "samples": [
-                "{I_Want} to be {salaryImportance}",
-                "{salaryImportance}"
-              ]
+                "id": "Elicit.Intent-PetMatchIntent.IntentSlot-size",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "There are dogs that are tiny, small, medium, and large. Which would you like?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "What size of a dog would you like?"
+                    }
+                ]
             },
             {
-              "name": "personality",
-              "type": "personalityType",
-              "samples": [
-                "{I_Am} {article} {personality}",
-                "{personality}"
-              ]
+                "id": "Elicit.Intent-PetMatchIntent.IntentSlot-temperament",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Are you looking for more of a family dog or a guard dog?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Would you prefer a dog to hang out with kids or to protect you?"
+                    }
+                ]
             },
             {
-              "name": "preferredSpecies",
-              "type": "preferredSpeciesType",
-              "samples": [
-                "{I_Like} {preferredSpecies}",
-                "{preferredSpecies}"
-              ]
-            },
-            {
-              "name": "bloodTolerance",
-              "type": "bloodToleranceType",
-              "samples": [
-                "I would {bloodTolerance}",
-                "{bloodTolerance}"
-              ]
-            },
-            {
-              "name": "I_Like",
-              "type": "iSubjectType"
-            },
-            {
-              "name": "I_Want",
-              "type": "iSubjectType"
-            },
-            {
-              "name": "article",
-              "type": "articleType"
-            },
-            {
-              "name": "I_Am",
-              "type": "IAmType"
+                "id": "Elicit.Intent-PetMatchIntent.IntentSlot-energy",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Do you prefer high energy or low energy dogs?"
+                    }
+                ]
             }
-          ],
-          "samples": [
-            "recommend a job",
-            "{I_Like} {preferredSpecies}",
-            "{I_Like} {bloodTolerance}",
-            "{I_Am} {article} {personality}",
-            "{I_Want} to be {salaryImportance}",
-            "to recommend a job",
-            "start my career"
-          ]
-        }
-      ],
-      "types": [
-        {
-          "values": [
-            {
-              "name": {
-                "value": "a",
-                "synonyms": []
-              }
-            },
-            {
-              "name": {
-                "value": "an",
-                "synonyms": []
-              }
-            }
-          ],
-          "name": "articleType"
-        },
-        {
-          "values": [
-            {
-              "name": {
-                "value": "low",
-                "synonyms": [
-                  "yuck",
-                  "no way",
-                  "gross",
-                  "I can't stand it",
-                  "can't stand it",
-                  "throw up when I see it",
-                  "scream"
-                ]
-              }
-            },
-            {
-              "name": {
-                "value": "high",
-                "synonyms": [
-                  "I like blood",
-                  "doesn't bother me",
-                  "blood is natural",
-                  "shrug"
-                ]
-              }
-            }
-          ],
-          "name": "bloodToleranceType"
-        },
-        {
-          "values": [
-            {
-              "name": {
-                "value": "I am",
-                "synonyms": []
-              }
-            }
-          ],
-          "name": "IAmType"
-        },
-        {
-          "values": [
-            {
-              "id": "true",
-              "name": {
-                "value": "positive",
-                "synonyms": [
-                  "I want",
-                  "I prefer",
-                  "I really like",
-                  "I love",
-                  "I like"
-                ]
-              }
-            },
-            {
-              "id": "false",
-              "name": {
-                "value": "negative",
-                "synonyms": [
-                  "I don't want",
-                  "I really don't like",
-                  "I don't like",
-                  "I hate"
-                ]
-              }
-            }
-          ],
-          "name": "iSubjectType"
-        },
-        {
-          "values": [
-            {
-              "name": {
-                "value": "extrovert",
-                "synonyms": [
-                  "social butterfly",
-                  "love to party"
-                ]
-              }
-            },
-            {
-              "name": {
-                "value": "introvert",
-                "synonyms": [
-                  "to be alone",
-                  "misunderstood"
-                ]
-              }
-            }
-          ],
-          "name": "personalityType"
-        },
-        {
-          "values": [
-            {
-              "name": {
-                "value": "animals",
-                "synonyms": [
-                  "dogs",
-                  "cats",
-                  "birds",
-                  "turtles",
-                  "puppies",
-                  "kittens",
-                  "elephants"
-                ]
-              }
-            },
-            {
-              "name": {
-                "value": "people",
-                "synonyms": [
-                  "men",
-                  "women",
-                  "kids",
-                  "humans"
-                ]
-              }
-            }
-          ],
-          "name": "preferredSpeciesType"
-        },
-        {
-          "values": [
-            {
-              "name": {
-                "value": "unimportant",
-                "synonyms": [
-                  "money is evil",
-                  "money is not important",
-                  "not a sell out",
-                  "nope",
-                  "don't care about money"
-                ]
-              }
-            },
-            {
-              "name": {
-                "value": "somewhat",
-                "synonyms": [
-                  "just enough",
-                  "somewhat important",
-                  "not top priority",
-                  "support my family"
-                ]
-              }
-            },
-            {
-              "name": {
-                "value": "very",
-                "synonyms": [
-                  "high salary",
-                  "filthy rich",
-                  "billionaire",
-                  "important",
-                  "nothing more important"
-                ]
-              }
-            }
-          ],
-          "name": "salaryImportanceType"
-        }
-      ]
-    },
-    "dialog": {
-      "intents": [
-        {
-          "name": "RecommendationIntent",
-          "confirmationRequired": false,
-          "slots": [
-            {
-              "name": "salaryImportance",
-              "type": "salaryImportanceType",
-              "elicitationRequired": true,
-              "confirmationRequired": false,
-              "prompts": {
-                "elicitation": "Elicit.Intent-RecommendationIntent.IntentSlot-salaryImportance"
-              }
-            },
-            {
-              "name": "personality",
-              "type": "personalityType",
-              "elicitationRequired": true,
-              "confirmationRequired": false,
-              "prompts": {
-                "elicitation": "Elicit.Intent-RecommendationIntent.IntentSlot-personality"
-              }
-            },
-            {
-              "name": "preferredSpecies",
-              "type": "preferredSpeciesType",
-              "elicitationRequired": true,
-              "confirmationRequired": false,
-              "prompts": {
-                "elicitation": "Elicit.Intent-RecommendationIntent.IntentSlot-preferredSpecies"
-              }
-            },
-            {
-              "name": "bloodTolerance",
-              "type": "bloodToleranceType",
-              "elicitationRequired": true,
-              "confirmationRequired": false,
-              "prompts": {
-                "elicitation": "Elicit.Intent-RecommendationIntent.IntentSlot-bloodTolerance"
-              }
-            },
-            {
-              "name": "I_Like",
-              "type": "iSubjectType",
-              "elicitationRequired": false,
-              "confirmationRequired": false
-            },
-            {
-              "name": "I_Want",
-              "type": "iSubjectType",
-              "elicitationRequired": false,
-              "confirmationRequired": false
-            },
-            {
-              "name": "article",
-              "type": "articleType",
-              "elicitationRequired": false,
-              "confirmationRequired": false
-            },
-            {
-              "name": "I_Am",
-              "type": "IAmType",
-              "elicitationRequired": false,
-              "confirmationRequired": false
-            }
-          ]
-        }
-      ]
-    },
-    "prompts": [
-      {
-        "id": "Elicit.Intent-RecommendationIntent.IntentSlot-salaryImportance",
-        "variations": [
-          {
-            "type": "PlainText",
-            "value": "Which phrase best describes your thoughts about money, there's nothing more important, not top priority, or I don't care about money."
-          }
         ]
-      },
-      {
-        "id": "Elicit.Intent-RecommendationIntent.IntentSlot-personality",
-        "variations": [
-          {
-            "type": "PlainText",
-            "value": "Would you say that you are an introvert or an extrovert?"
-          }
-        ]
-      },
-      {
-        "id": "Elicit.Intent-RecommendationIntent.IntentSlot-preferredSpecies",
-        "variations": [
-          {
-            "type": "PlainText",
-            "value": "Between animals and people which do you prefer?"
-          }
-        ]
-      },
-      {
-        "id": "Elicit.Intent-RecommendationIntent.IntentSlot-bloodTolerance",
-        "variations": [
-          {
-            "type": "PlainText",
-            "value": "If you saw blood would you scream or shrug?"
-          }
-        ]
-      }
-    ]
-  }
+    }
 }
